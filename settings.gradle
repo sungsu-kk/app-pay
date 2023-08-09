@@ -1,0 +1,3 @@
+rootProject.name = 'app-pay'
+include 'membership-service'
+
