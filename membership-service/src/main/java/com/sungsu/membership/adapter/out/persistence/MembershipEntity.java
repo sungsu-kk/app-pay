@@ -1,45 +1,36 @@
 package com.sungsu.membership.adapter.out.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.sungsu.membership.common.BaseTimeEntity;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "membership")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MembershipEntity {
+public class MembershipEntity extends BaseTimeEntity {
     @Id
+    @Column(name = "membershipId")
     @GeneratedValue
-    private Long membershipId;
+    private Long id;
     private String name;
-    private String address;
     private String email;
-    private boolean isValid;
-    private boolean isCorp;
+    private String address;
 
-    public MembershipEntity(String name, String address, String email, boolean isValid, boolean isCorp) {
+    private Boolean isValid;
+    private Boolean isCorp;
+
+
+    @Builder
+    public MembershipEntity(String name, String email, String address, Boolean isValid, Boolean isCorp) {
         this.name = name;
-        this.address = address;
         this.email = email;
+        this.address = address;
         this.isValid = isValid;
         this.isCorp = isCorp;
     }
 
-    @Override
-    public String toString() {
-        return "MembershipEntity{" +
-                "membershipId=" + membershipId +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", isValid=" + isValid +
-                ", isCorp=" + isCorp +
-                '}';
-    }
+
+
 }
