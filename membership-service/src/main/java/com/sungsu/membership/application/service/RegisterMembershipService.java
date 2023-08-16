@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class RegisterMembershipService implements RegisterMembershipUsecase {
 
     private final RegisterMembershipPort registerMembershipPort;
@@ -18,6 +17,5 @@ public class RegisterMembershipService implements RegisterMembershipUsecase {
     @Override
     public Membership registerMembership(RegisterMembershipCommand command) {
        return registerMembershipPort.createMembership(command);
-
     }
 }

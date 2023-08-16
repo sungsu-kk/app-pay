@@ -4,9 +4,11 @@ import jakarta.validation.constraints.AssertFalse;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterMembershipRequest {
@@ -18,6 +20,6 @@ public class RegisterMembershipRequest {
     @NotNull
     private String email;
     @AssertFalse
-    private boolean isCorp;
+    private Boolean isCorp;
 
 }

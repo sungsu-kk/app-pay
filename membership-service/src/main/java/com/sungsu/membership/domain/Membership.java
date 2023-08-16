@@ -13,8 +13,8 @@ public class Membership {
     private final String name;
     private final String email;
     private final String address;
-    private final boolean isValid;
-    private final boolean isCorp;
+    private final Boolean isValid;
+    private final Boolean isCorp;
 
 }
 
